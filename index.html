@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ATKAN CONSULTING - Action & Accomplissement</title>
-  <meta name="description" content="ATKAN CONSULTING : formations sur-mesure en leadership, intelligence collective et conduite du changement.">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ATKAN CONSULTING</title>
+<meta content="ATKAN CONSULTING : formations sur-mesure en leadership, intelligence collective et conduite du changement." name="description"/>
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -16,6 +17,7 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       color: #333;
+      background-color: #000; color: #ffd700;
     }
 
     header {
@@ -112,16 +114,6 @@
       border-left: 4px solid #d4af37;
     }
 
-    .service h3 {
-      color: #d4af37;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .service p {
-      color: #666;
-    }
-
     .section-title {
       text-align: center;
       margin-bottom: 2rem;
@@ -157,6 +149,96 @@
       margin-top: 3rem;
     }
 
+    /* Dark style for formations */
+    .dark-card {
+      background: #000;
+      color: #ffd700;
+      border: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .dark-card h3 span {
+      color: #00ff7f;
+      font-weight: bold;
+    }
+
+    .dark-card h3 {
+      color: #00ff7f;
+      font-size: 1.4rem;
+    }
+
+    .dark-style .service p {
+      color: #ffd700;
+    }
+
+
+.carousel-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+  background-color: #111;
+}
+.carousel-slide h2 {
+  color: #00ff7f;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.carousel-slide p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffd700;
+}
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(212, 175, 55, 0.8);
+  border: none;
+  color: black;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  z-index: 10;
+}
+.carousel-button:hover {
+  background-color: #ffd700;
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+.intro {
+  background-color: #111;
+  color: #ffd700;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+.intro h2 {
+  font-size: 2rem;
+  color: #00ff7f;
+  margin-bottom: 1rem;
+}
+.intro p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
     @media (max-width: 768px) {
       header .header-content {
         flex-direction: column;
@@ -182,110 +264,138 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <img src="assets/logo.png" alt="Logo ATKAN CONSULTING">
-      <div style="text-align: center;">
-        <h1>ATKAN CONSULTING</h1>
-        <p>Action & Accomplissement</p>
-      </div>
-    </div>
-  </header>
+<header>
+<div class="header-content">
+<img alt="Logo.png" src="assets/logo.png"/>
+<div style="text-align: center;">
+<h1>ATKAN CONSULTING</h1>
+<p>Action &amp; Accomplissement</p>
+</div>
+</div>
+</header>
+<nav>
+<ul>
+<li><a href="#accueil">Accueil</a></li>
+<li><a href="#formations">Nos formations</a></li>
+<li><a href="#leviers">Nos leviers</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<main>
+<section class="hero" id="accueil">
+<h1>Bienvenue !</h1>
+<p>Chez ATKAN, pas de solutions toutes faites</p>
+<p>Chaque organisation est unique. C'est pourquoi nous co-construisons chaque mission avec vous, pour répondre concrètement à vos enjeux et générer un impact humain, durable et mesurable.</p>
+<p>Dans un monde professionnel en constante mutation, nous croyons à la force de l'intelligence collective, à l'adaptation sur le terrain, et à une approche profondément ancrée dans la réalité de vos équipes.</p>
+</section><h2 class="section-title" id="formations">Nos Formations</h2><div class="carousel-container">
+<div class="carousel-track">
+<div class="carousel-slide">
+<h2>Pédagogies actives et apprentissage</h2>
+<p>Comprendre et expérimenter la classe inversée, la pédagogie par projet et coopérative.<br/>Outils : Canva, Padlet, Genially, Quizizz</p>
+</div>
+<div class="carousel-slide">
+<h2>Supports visuels interactifs</h2>
+<p>Créer des contenus animés et engageants avec les principes du design pédagogique.<br/>Outils : Genially, Canva, Thinglink, Powtoon</p>
+</div>
+<div class="carousel-slide">
+<h2>Formation avec l’IA générative</h2>
+<p>Créer des supports avec ChatGPT, Notion AI, Gemini, et comprendre les enjeux éthiques de l'IA.</p>
+</div>
+<div class="carousel-slide">
+<h2>Classe virtuelle efficace</h2>
+<p>Structurer un parcours à distance, animer et suivre une classe virtuelle participative.<br/>Outils : Zoom, Teams, Klaxoon, Classroom</p>
+</div>
+<div class="carousel-slide">
+<h2>Évaluation formative et numérique</h2>
+<p>Différencier les évaluations et intégrer des outils numériques adaptés.<br/>Outils : Socrative, Wooclap, Forms</p>
+</div>
+<div class="carousel-slide">
+<h2>Pédagogue augmenté avec IA</h2>
+<p>Automatiser des tâches, personnaliser les parcours et simuler des feedbacks avec l’IA.<br/>Outils : ChatGPT, Gamma, Synthesia</p>
+</div>
+<div class="carousel-slide">
+<h2>Formations modulables &amp; accompagnement</h2>
+<p>Leadership, coaching, conduite du changement et cohésion d’équipe.<br/>Outils : Klaxoon, Miro, Wooclap</p>
+</div>
+</div>
+<button class="carousel-button prev">❮</button>
+<button class="carousel-button next">❯</button>
+</div>
+<section id="leviers">
+<h2 class="section-title">Nos 5 leviers d’action</h2>
+<div class="services">
+<div class="service" style="background-color: #000; color: #ffd700; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); border-left: 4px solid #ffd700; padding: 2rem; text-align: center;">
+<h3 style="color: #00ffcc; margin-bottom: 1rem; font-size: 1.4rem;">🔹 Pédagogies innovantes</h3>
+<p>Favoriser l’engagement par des méthodes actives, expérientielles et adaptées à vos contextes.</p>
+</div>
+<div class="service" style="background-color: #000; color: #ffd700; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); border-left: 4px solid #ffd700; padding: 2rem; text-align: center;">
+<h3 style="color: #00ffcc; margin-bottom: 1rem; font-size: 1.4rem;">🔹 Formations sur mesure</h3>
+<p>Des parcours ciblés, conçus autour de vos besoins opérationnels et de vos priorités stratégiques.</p>
+</div>
+<div class="service" style="background-color: #000; color: #ffd700; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); border-left: 4px solid #ffd700; padding: 2rem; text-align: center;">
+<h3 style="color: #00ffcc; margin-bottom: 1rem; font-size: 1.4rem;">🔹 Coaching &amp; Leadership</h3>
+<p>Accompagner les dirigeants, cadres et managers dans leurs postures, décisions et dynamiques collectives.</p>
+</div>
+<div class="service" style="background-color: #000; color: #ffd700; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); border-left: 4px solid #ffd700; padding: 2rem; text-align: center;">
+<h3 style="color: #00ffcc; margin-bottom: 1rem; font-size: 1.4rem;">🔹 Accompagnement au changement</h3>
+<p>Mobiliser les équipes, sécuriser les transitions et embarquer l’ensemble des parties prenantes.</p>
+</div>
+<div class="service" style="background-color: #000; color: #ffd700; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); border-left: 4px solid #ffd700; padding: 2rem; text-align: center;">
+<h3 style="color: #00ffcc; margin-bottom: 1rem; font-size: 1.4rem;">🔹 Cohésion &amp; coopération</h3>
+<p>Recréer la confiance, fluidifier les relations et renforcer le travail collectif au quotidien.</p>
+</div>
+</div>
+</section>
+<section class="hero" id="signature" style="margin-top: 3rem;">
+<h2 class="section-title">Notre signature</h2>
+<p><strong>L’écoute</strong> pour comprendre ce qui se joue vraiment.</p>
+<p><strong>L’agilité</strong> pour adapter nos approches à votre réalité de terrain.</p>
+<p><strong>Le pragmatisme</strong> pour obtenir des résultats concrets, visibles et durables.</p>
+</section>
+<section class="intro">
+<div class="intro-content">
+<h2>DE L’INTENTION À LA TRANSFORMATION</h2>
+<p>Vers une pédagogie plus active, plus humaine et augmentée.</p>
+<p>Nos formations s’adressent aux formateurs, enseignants, responsables pédagogiques et experts souhaitant faire évoluer leurs pratiques vers plus d’impact, d’agilité et de sens.</p>
+</div>
+</section>
+</footer>
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector('.next');
+  const prevButton = document.querySelector('.prev');
+  let currentIndex = 0;
 
-  <nav>
-    <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#formations">Nos formations</a></li>
-      <li><a href="#leviers">Nos leviers</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  function updateCarousel() {
+    track.style.transform = 'translateX(-' + currentIndex * 100 + '%)';
+  }
 
-  <main>
-    <section class="hero" id="accueil">
-      <h1>Bienvenue !</h1>
-      <p>Chez ATKAN, pas de solutions toutes faites</p>
-      <p>Chaque organisation est unique. C'est pourquoi nous co-construisons chaque mission avec vous, pour répondre concrètement à vos enjeux et générer un impact humain, durable et mesurable.</p>
-      <p>Dans un monde professionnel en constante mutation, nous croyons à la force de l'intelligence collective, à l'adaptation sur le terrain, et à une approche profondément ancrée dans la réalité de vos équipes.</p>
-    </section>
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+  });
 
-    <section id="formations">
-      <h2 class="section-title">Nos Formations</h2>
-      <div class="services">
-        <div class="service">
-          <h3>Leadership & Management</h3>
-          <p>Développez votre potentiel de leader et apprenez à mobiliser vos équipes autour d'objectifs communs grâce à nos méthodes éprouvées.</p>
-        </div>
-        <div class="service">
-          <h3>Intelligence Collective</h3>
-          <p>Libérez la créativité de vos équipes et optimisez la collaboration pour des décisions plus pertinentes et partagées.</p>
-        </div>
-        <div class="service">
-          <h3>Conduite du Changement</h3>
-          <p>Accompagnez sereinement les transformations de votre organisation avec des outils concrets et une approche humaine.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="methodologie">
-      <h2 class="section-title">Notre Approche</h2>
-      <div class="hero">
-        <p><strong>Co-construction :</strong> Nous travaillons avec vous, pas pour vous</p>
-        <p><strong>Sur-mesure :</strong> Chaque solution est adaptée à votre contexte unique</p>
-        <p><strong>Impact mesurable :</strong> Des résultats concrets et durables</p>
-      </div>
-    </section>
-
-    <section id="leviers">
-      <h2 class="section-title">Nos 5 leviers d’action</h2>
-      <div class="services">
-        <div class="service">
-          <h3>🔹 Pédagogies innovantes</h3>
-          <p>Favoriser l’engagement par des méthodes actives, expérientielles et adaptées à vos contextes.</p>
-        </div>
-        <div class="service">
-          <h3>🔹 Formations sur mesure</h3>
-          <p>Des parcours ciblés, conçus autour de vos besoins opérationnels et de vos priorités stratégiques.</p>
-        </div>
-        <div class="service">
-          <h3>🔹 Coaching & Leadership</h3>
-          <p>Accompagner les dirigeants, cadres et managers dans leurs postures, décisions et dynamiques collectives.</p>
-        </div>
-        <div class="service">
-          <h3>🔹 Accompagnement au changement</h3>
-          <p>Mobiliser les équipes, sécuriser les transitions et embarquer l’ensemble des parties prenantes.</p>
-        </div>
-        <div class="service">
-          <h3>🔹 Cohésion & coopération</h3>
-          <p>Recréer la confiance, fluidifier les relations et renforcer le travail collectif au quotidien.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="signature" class="hero" style="margin-top: 3rem;">
-      <h2 class="section-title">Notre signature</h2>
-      <p>✔️ <strong>L’écoute</strong> pour comprendre ce qui se joue vraiment.</p>
-      <p>✔️ <strong>L’agilité</strong> pour adapter nos approches à votre réalité de terrain.</p>
-      <p>✔️ <strong>Le pragmatisme</strong> pour obtenir des résultats concrets, visibles et durables.</p>
-    </section>
-
-    <section id="contact" class="contact-section">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-info">
-        <p><strong>Email :</strong> contact@atkan-consulting.fr</p>
-        <p><strong>Téléphone :</strong> +33 6 50 41 71 52</p>
-        <p style="margin-top: 2rem; font-style: italic;">
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+  });
+</script>
+<section class="contact-section" id="contact" style="background-color: #000; color: #ffd700; padding: 3rem; border-radius: 10px; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); margin-top: 3rem; text-align: center;">
+<h2 class="section-title">Contact</h2>
+<div class="contact-info">
+<p style="color: #ffd700; font-size: 1.1rem;"><strong style="color: #00ffcc;">Email :</strong> contact@atkan-consulting.fr</p>
+<p style="color: #ffd700; font-size: 1.1rem;"><strong style="color: #00ffcc;">Téléphone :</strong> +33 6 50 41 71 52</p>
+<p style="color: #ffd700; font-size: 1.1rem;">
           Prêt à transformer votre organisation ? Contactez-nous pour un échange personnalisé.
         </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 ATKAN CONSULTING. Tous droits réservés.</p>
-  </footer>
-
-  <script>
+</div>
+</section>
+</main>
+<footer>
+<p>© 2024 ATKAN CONSULTING. Tous droits réservés.</p>
+</footer>
+<script>
     // Effet de scroll smooth pour la navigation
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
