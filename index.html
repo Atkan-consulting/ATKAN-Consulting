@@ -109,3 +109,169 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .service h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2.5rem;
+        }
+        
+        .contact-section {
+            background: #f4f4f4;
+            padding: 3rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info strong {
+            color: #d4af37;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo section (image masquée car inexistante) -->
+    <div class="logo">
+        <img src="assets/logo.png" alt="Logo ATKAN CONSULTING" style="height: 60px;">
+    </div>
+
+    <header>
+        <h1>ATKAN CONSULTING</h1>
+        <p>Action & Accomplissement</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#formations">Nos formations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero" id="accueil">
+            <h1>Bienvenue !</h1>
+            <p>Chez ATKAN, pas de solutions toutes faites</p>
+            <p>Chaque organisation est unique. C'est pourquoi nous co-construisons chaque mission avec vous, pour répondre concrètement à vos enjeux et générer un impact humain, durable et mesurable.</p>
+            <p>Dans un monde professionnel en constante mutation, nous croyons à la force de l'intelligence collective, à l'adaptation sur le terrain, et à une approche profondément ancrée dans la réalité de vos équipes.</p>
+        </section>
+
+        <section id="formations">
+            <h2 class="section-title">Nos Formations</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>🎯 Leadership & Management</h3>
+                    <p>Développez votre potentiel de leader et apprenez à mobiliser vos équipes autour d'objectifs communs grâce à nos méthodes éprouvées.</p>
+                </div>
+                <div class="service">
+                    <h3>🤝 Intelligence Collective</h3>
+                    <p>Libérez la créativité de vos équipes et optimisez la collaboration pour des décisions plus pertinentes et partagées.</p>
+                </div>
+                <div class="service">
+                    <h3>🔄 Conduite du Changement</h3>
+                    <p>Accompagnez sereinement les transformations de votre organisation avec des outils concrets et une approche humaine.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodologie">
+            <h2 class="section-title">Notre Approche</h2>
+            <div class="hero">
+                <p><strong>Co-construction :</strong> Nous travaillons avec vous, pas pour vous</p>
+                <p><strong>Sur-mesure :</strong> Chaque solution est adaptée à votre contexte unique</p>
+                <p><strong>Impact mesurable :</strong> Des résultats concrets et durables</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info">
+                <p><strong>Email :</strong> contact@atkan-consulting.fr</p>
+                <p><strong>Téléphone :</strong> +33 6 50 41 71 52</p>
+                <p style="margin-top: 2rem; font-style: italic;">
+                    Prêt à transformer votre organisation ? Contactez-nous pour un échange personnalisé.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ATKAN CONSULTING. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Effet de scroll smooth pour la navigation
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation simple au chargement
+        window.addEventListener('load', function() {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.opacity = '0';
+                hero.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    hero.style.transition = 'all 0.8s ease';
+                    hero.style.opacity = '1';
+                    hero.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
