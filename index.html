@@ -66,10 +66,31 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     nav ul li a:hover {
       color: #d4af37;
+    }
+
+    /* Style spécial pour le bouton catalogue */
+    nav ul li a.catalog-btn {
+      background: linear-gradient(135deg, #d4af37, #ffd700);
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a.catalog-btn:hover {
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6);
+      color: #000;
     }
 
     main {
@@ -260,6 +281,11 @@
       header img {
         margin-bottom: 1rem;
       }
+
+      nav ul li a.catalog-btn {
+        display: inline-block;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -277,6 +303,7 @@
 <li><a href="#formations">Nos formations</a></li>
 <li><a href="#leviers">Nos leviers</a></li>
 <li><a href="#contact">Contact</a></li>
+<li><a href="catalogue-2025.pdf" class="catalog-btn" target="_blank">📋 Catalogue 2025</a></li>
 </ul>
 </nav>
 <main>
@@ -296,7 +323,7 @@
 <p>Créer des contenus animés et engageants avec les principes du design pédagogique.<br/>Outils : Genially, Canva, Thinglink, Powtoon</p>
 </div>
 <div class="carousel-slide" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 300px; padding: 2rem; color: #ffd700; background-color: #111; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);">
-<h2>Formation avec l’IA générative</h2>
+<h2>Formation avec l'IA générative</h2>
 <p>Créer des supports avec ChatGPT, Notion AI, Gemini, et comprendre les enjeux éthiques de l'IA.</p>
 </div>
 <div class="carousel-slide" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 300px; padding: 2rem; color: #ffd700; background-color: #111; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);">
@@ -309,11 +336,11 @@
 </div>
 <div class="carousel-slide" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 300px; padding: 2rem; color: #ffd700; background-color: #111; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);">
 <h2>Pédagogue augmenté avec IA</h2>
-<p>Automatiser des tâches, personnaliser les parcours et simuler des feedbacks avec l’IA.<br/>Outils : ChatGPT, Gamma, Synthesia</p>
+<p>Automatiser des tâches, personnaliser les parcours et simuler des feedbacks avec l'IA.<br/>Outils : ChatGPT, Gamma, Synthesia</p>
 </div>
 <div class="carousel-slide" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 300px; padding: 2rem; color: #ffd700; background-color: #111; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);">
 <h2>Formations modulables &amp; accompagnement</h2>
-<p>Leadership, coaching, conduite du changement et cohésion d’équipe.<br/>Outils : Klaxoon, Miro, Wooclap</p>
+<p>Leadership, coaching, conduite du changement et cohésion d'équipe.<br/>Outils : Klaxoon, Miro, Wooclap</p>
 </div>
 </div>
 <button class="carousel-button prev">❮</button>
@@ -323,11 +350,11 @@
 
    
 <section id="leviers">
-<h2 class="section-title">Nos leviers d’action</h2>
+<h2 class="section-title">Nos leviers d'action</h2>
 <div class="services">
 <div class="service" style="background-color: #000; color: #ffd700; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); border-left: 4px solid #ffd700; padding: 2rem; text-align: center;">
 <h3 style="color: #00ffcc; margin-bottom: 1rem; font-size: 1.4rem;">🔹 Pédagogies innovantes</h3>
-<p>Favoriser l’engagement par des méthodes actives, expérientielles et adaptées à vos contextes.</p>
+<p>Favoriser l'engagement par des méthodes actives, expérientielles et adaptées à vos contextes.</p>
 </div>
 <div class="service" style="background-color: #000; color: #ffd700; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); border-left: 4px solid #ffd700; padding: 2rem; text-align: center;">
 <h3 style="color: #00ffcc; margin-bottom: 1rem; font-size: 1.4rem;">🔹 Formations sur mesure</h3>
@@ -347,15 +374,15 @@
 </section>
 <section class="hero" id="signature" style="background-color: #000; color: #ffd700; text-align: center; padding: 2rem; border-radius: 15px; margin-top: 2rem; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);">
 <h2 class="section-title" style="color: #ffd700;">Notre signature</h2>
-<p style="color: #ffd700;"><strong style="color: #ffd700;">L’écoute</strong> pour comprendre ce qui se joue vraiment.</p>
-<p style="color: #ffd700;"><strong style="color: #ffd700;">L’agilité</strong> pour adapter nos approches à votre réalité de terrain.</p>
+<p style="color: #ffd700;"><strong style="color: #ffd700;">L'écoute</strong> pour comprendre ce qui se joue vraiment.</p>
+<p style="color: #ffd700;"><strong style="color: #ffd700;">L'agilité</strong> pour adapter nos approches à votre réalité de terrain.</p>
 <p style="color: #ffd700;"><strong style="color: #ffd700;">Le pragmatisme</strong> pour obtenir des résultats concrets, visibles et durables.</p>
 </section>
 <section class="intro">
 <div class="intro-content">
-<h2>DE L’INTENTION À LA TRANSFORMATION</h2>
+<h2>DE L'INTENTION À LA TRANSFORMATION</h2>
 <p>Vers une pédagogie plus active, plus humaine et augmentée.</p>
-<p>Nos formations s’adressent aux formateurs, enseignants, responsables pédagogiques et experts souhaitant faire évoluer leurs pratiques vers plus d’impact, d’agilité et de sens.</p>
+<p>Nos formations s'adressent aux formateurs, enseignants, responsables pédagogiques et experts souhaitant faire évoluer leurs pratiques vers plus d'impact, d'agilité et de sens.</p>
 </div>
 </section>
 
