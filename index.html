@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <title>Mon Site Web</title>
+    <title>ATKAN CONSULTING - Action & Accomplissement</title>
     <style>
         * {
             margin: 0;
@@ -15,13 +14,35 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #d4af37;
+            color: #333;
         }
+        
+        .logo {
+            text-align: center;
+            padding: 1rem;
+            background: #f9f9f9;
+        }
+        
+        .logo img {
+            height: 60px;
+            display: none; /* Masqué car l'image n'existe pas */
+        }
+        
         header {
             background: #d4af37;
             color: black;
             padding: 1rem 0;
-            text-align: left;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
         }
         
         nav {
@@ -72,132 +93,19 @@
         .hero p {
             font-size: 1.2rem;
             color: #666;
+            margin-bottom: 1rem;
         }
         
-        .features {
+        .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
         
-        .feature {
-            background: black;
+        .service {
+            background: #f9f9f9;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
-        }
-        
-        .feature h3 {
-            color: #4CAF50;
-            margin-bottom: 1rem;
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <img src="assets/logo.png" alt="Logo.png" style="height: 60px;">
-    <header>
-        <h1>ATKAN CONSULTING</h1>
-        <p>Action & Accomplissement</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#services">Nos formations</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="hero" id="accueil">
-            <h1>Bienvenue !</h1>
-            <p>Chez ATKAN, pas de solutions toutes faites</p>
-<p>Chaque organisation est unique. C’est pourquoi nous co-construisons chaque mission avec vous, pour répondre concrètement à vos enjeux et générer un impact humain, durable et mesurable</p>
-<p>Dans un monde professionnel en constante mutation, nous croyons à la force de l’intelligence collective, à l’adaptation sur le terrain, et à une approche profondément ancrée dans la réalité de vos équipes.</p>
-        </section>
-
-        <section class="features" id="services">
-            <div class="feature">
-                <h3> Design</h3>
-                <p>Création de designs modernes et attractifs adaptés à vos besoins.</p>
-            </div>
-            <div class="feature">
-                <h3>💻 Développement</h3>
-                <p>Sites web responsive et optimisés pour tous les appareils.</p>
-            </div>
-            <div class="feature">
-                <h3>📱 Mobile</h3>
-                <p>Expérience utilisateur optimale sur mobile et tablette.</p>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Portfolio</h2>
-            <p style="text-align: center; color: #666;">Mes dernières réalisations seront bientôt disponibles ici.</p>
-        </section>
-
-        <section id="contact" style="background: #f4f4f4; padding: 3rem; border-radius: 10px; margin-top: 3rem;">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Contact</h2>
-            <div style="text-align: center;">
-                <p><strong>Email :</strong> votre.email@example.com</p>
-                <p><strong>Téléphone :</strong> +33 6 50 41 71 52</p>
-                <p style="margin-top: 1rem;">
-                    <a href="https://github.com/votre-username" target="_blank" style="color: #4CAF50; text-decoration: none; font-weight: bold;">
-                    
-                    </a>
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p></p>
-    </footer>
-
-    <script>
-        // Effet de scroll smooth pour la navigation
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-
-        // Animation simple au chargement
-        window.addEventListener('load', function() {
-            document.querySelector('.hero').style.opacity = '0';
-            document.querySelector('.hero').style.transform = 'translateY(30px)';
-            setTimeout(() => {
-                document.querySelector('.hero').style.transition = 'all 0.8s ease';
-                document.querySelector('.hero').style.opacity = '1';
-                document.querySelector('.hero').style.transform = 'translateY(0)';
-            }, 100);
-        });
-    </script>
-</body>
-</html>
