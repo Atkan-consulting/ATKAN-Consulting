@@ -17,9 +17,11 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       color: #333;
-      background-color: #000;
+      background: linear-gradient(135deg, #000 0%, #1a1a00 30%, #333300 60%, #ffd700 100%);
+      background-attachment: fixed;
       color: #ffffe3;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
     /* Header optimisé mobile */
@@ -144,9 +146,9 @@
       padding: 1rem;
     }
 
-    /* Hero section responsive */
+    /* Hero section responsive avec fond noir */
     .hero {
-      background: linear-gradient(135deg, #111, #000);
+      background: #000;
       color: #ffd700;
       padding: clamp(2rem, 8vw, 4rem);
       border-radius: 20px;
@@ -159,13 +161,14 @@
     .hero h1 {
       font-size: clamp(2rem, 6vw, 3rem);
       margin-bottom: 1.5rem;
-      color: #ffd700;
+      color: #ffffff;
+      font-weight: bold;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     .hero p {
       font-size: clamp(1rem, 3vw, 1.2rem);
-      color: #ffd700;
+      color: #ffffff;
       margin-bottom: 1rem;
       line-height: 1.7;
       max-width: 800px;
@@ -461,11 +464,11 @@
       }
     }
 
-    /* Animations d'entrée */
+    /* Animations d'entrée fluides */
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(50px);
       }
       to {
         opacity: 1;
@@ -473,8 +476,122 @@
       }
     }
 
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideInHeader {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Classes d'animation */
     .animate-in {
-      animation: fadeInUp 0.6s ease-out forwards;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .animate-left {
+      animation: fadeInLeft 0.8s ease-out forwards;
+    }
+
+    .animate-right {
+      animation: fadeInRight 0.8s ease-out forwards;
+    }
+
+    .animate-scale {
+      animation: fadeInScale 0.8s ease-out forwards;
+    }
+
+    .animate-header {
+      animation: slideInHeader 0.8s ease-out forwards;
+    }
+
+    /* Animation par défaut pour tous les éléments */
+    header, nav, .hero, .section-title, .service, .intro, .contact-section, .carousel-container {
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+
+    /* Délais d'animation échelonnés */
+    header {
+      animation: slideInHeader 1s ease-out 0.1s forwards;
+    }
+
+    nav {
+      animation: fadeInUp 0.8s ease-out 0.3s forwards;
+    }
+
+    .hero {
+      animation: fadeInScale 1s ease-out 0.5s forwards;
+    }
+
+    .section-title {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .carousel-container {
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+
+    .service:nth-child(1) {
+      animation: fadeInLeft 0.8s ease-out 0.1s forwards;
+    }
+
+    .service:nth-child(2) {
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+
+    .service:nth-child(3) {
+      animation: fadeInRight 0.8s ease-out 0.3s forwards;
+    }
+
+    .intro {
+      animation: fadeInScale 0.8s ease-out 0.2s forwards;
+    }
+
+    .contact-section {
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+
+    footer {
+      animation: fadeInUp 0.8s ease-out 0.1s forwards;
+      opacity: 0;
+      animation-fill-mode: forwards;
     }
 
     /* Support du mode sombre système */
@@ -512,7 +629,7 @@
 <main>
 <section class="hero animate-in" id="accueil">
 <h1>Bienvenue !</h1>
-<p>Chez ATKAN, pas de solutions toutes faites</p>
+<p>Chez ATKAN CONSULTING, pas de solutions toutes faites</p>
 <p>Chaque organisation est unique. C'est pourquoi nous co-construisons chaque mission avec vous, pour répondre concrètement à vos enjeux et générer un impact humain, durable et mesurable.</p>
 <p>Dans un monde professionnel en constante mutation, nous croyons à la force de l'intelligence collective, à l'adaptation sur le terrain, et à une approche profondément ancrée dans la réalité de vos équipes.</p>
 </section>
@@ -538,7 +655,7 @@
 <p>Structurer un parcours à distance, animer et suivre une classe virtuelle participative.<br/>Outils : Zoom, Teams, Klaxoon, Classroom</p>
 </div>
 <div class="carousel-slide">
-<h2>Évaluation formative et numérique</h2>
+<2>Évaluation formative et numérique</h2>
 <p>Différencier les évaluations et intégrer des outils numériques adaptés.<br/>Outils : Socrative, Wooclap, Forms</p>
 </div>
 <div class="carousel-slide">
@@ -575,9 +692,9 @@
 
 <section class="hero" id="signature">
 <h2 class="section-title">Notre signature</h2>
-<p><strong>L'écoute</strong> pour comprendre ce qui se joue vraiment.</p>
-<p><strong>L'agilité</strong> pour adapter nos approches à votre réalité de terrain.</p>
-<p><strong>Le pragmatisme</strong> pour obtenir des résultats concrets, visibles et durables.</p>
+<p style="color: #ffd700;"><strong>L'écoute</strong> pour comprendre ce qui se joue vraiment.</p>
+<p style="color: #ffd700;"><strong>L'agilité</strong> pour adapter nos approches à votre réalité de terrain.</p>
+<p style="color: #ffd700;"><strong>Le pragmatisme</strong> pour obtenir des résultats concrets, visibles et durables.</p>
 </section>
 
 <section class="intro">
@@ -757,24 +874,52 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Animation d'entrée
+// Animation d'entrée au scroll améliorée
 const observerOptions = {
   root: null,
-  rootMargin: '0px',
-  threshold: 0.1
+  rootMargin: '-50px',
+  threshold: 0.15
 };
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate-in');
+      // Délai échelonné pour les éléments multiples
+      setTimeout(() => {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0) scale(1)';
+        entry.target.classList.add('animate-in');
+      }, index * 100);
+      
+      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-document.querySelectorAll('.service, .intro, .contact-section').forEach(el => {
+// Observer tous les éléments avec animation
+document.querySelectorAll('.section-title:not(.hero .section-title)').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'all 0.8s ease-out';
   observer.observe(el);
 });
+
+// Animation spéciale pour les éléments au scroll
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+// Ajouter une animation fluide au carousel lors du scroll
+const carouselElement = document.querySelector('.carousel-container');
+if (carouselElement) {
+  scrollObserver.observe(carouselElement);
+}
 
 // Performance optimization
 if ('requestIdleCallback' in window) {
