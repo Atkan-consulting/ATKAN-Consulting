@@ -61,9 +61,9 @@
       opacity: 0.9;
     }
 
-    /* Navigation mobile-friendly */
+    /* Navigation mobile-friendly avec fond noir mat */
     nav {
-      background: #222;
+      background: #000000;
       padding: 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       position: sticky;
@@ -117,7 +117,7 @@
       transform: translateY(-2px);
     }
 
-    /* Bouton catalogue optimisé */
+    /* Bouton catalogue avec animation intelligente qui attire l'œil */
     nav ul li a.catalog-btn {
       background: linear-gradient(135deg, #ffffe3, #ffd700);
       color: #000;
@@ -125,13 +125,65 @@
       text-transform: uppercase;
       font-size: clamp(0.8rem, 2vw, 0.9rem);
       box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
-      animation: pulse 2s infinite;
+      position: relative;
+      overflow: hidden;
+      animation: intelligentPulse 3s ease-in-out infinite;
     }
 
     nav ul li a.catalog-btn:hover {
       background: linear-gradient(135deg, #ffd700, #FFFFE3);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(212, 175, 55, 0.8);
+      animation: none;
+    }
+
+    /* Animation intelligente qui attire l'œil */
+    @keyframes intelligentPulse {
+      0% { 
+        box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
+        transform: scale(1);
+      }
+      15% { 
+        box-shadow: 0 5px 20px rgba(212, 175, 55, 0.7);
+        transform: scale(1.05);
+      }
+      30% { 
+        box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
+        transform: scale(1);
+      }
+      100% { 
+        box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
+        transform: scale(1);
+      }
+    }
+
+    /* Effet de brillance qui traverse le bouton */
+    nav ul li a.catalog-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
+      z-index: 1;
+    }
+
+    nav ul li a.catalog-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Animation de shake subtile occasionnelle */
+    @keyframes subtleShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-2px); }
+      75% { transform: translateX(2px); }
+    }
+
+    /* Déclencher le shake de façon intelligente */
+    nav ul li a.catalog-btn.shake {
+      animation: subtleShake 0.3s ease-in-out;
     }
 
     @keyframes pulse {
@@ -394,7 +446,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #222;
+        background: #000000;
         box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         padding: 1rem;
       }
@@ -921,13 +973,58 @@ if (carouselElement) {
   scrollObserver.observe(carouselElement);
 }
 
-// Performance optimization
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(() => {
-    // Lazy load non-critical elements
-    console.log('Site optimized for mobile performance');
+// Animation intelligente pour le bouton CATALOGUE 2025
+function initIntelligentCatalogAnimation() {
+  const catalogBtn = document.querySelector('.catalog-btn');
+  if (!catalogBtn) return;
+
+  let isUserInteracting = false;
+  let lastInteraction = Date.now();
+
+  // Détecter l'interaction utilisateur
+  document.addEventListener('mousemove', () => {
+    isUserInteracting = true;
+    lastInteraction = Date.now();
+    setTimeout(() => {
+      if (Date.now() - lastInteraction > 2000) {
+        isUserInteracting = false;
+      }
+    }, 2000);
+  });
+
+  // Animation intelligente qui se déclenche quand l'utilisateur n'interagit pas
+  function triggerIntelligentAnimation() {
+    if (!isUserInteracting && !catalogBtn.matches(':hover')) {
+      // Ajouter un shake subtil
+      catalogBtn.classList.add('shake');
+      setTimeout(() => {
+        catalogBtn.classList.remove('shake');
+      }, 300);
+    }
+  }
+
+  // Déclencher l'animation toutes les 8 secondes si pas d'interaction
+  setInterval(() => {
+    if (Date.now() - lastInteraction > 5000) {
+      triggerIntelligentAnimation();
+    }
+  }, 8000);
+
+  // Animation initiale après 3 secondes de chargement
+  setTimeout(triggerIntelligentAnimation, 3000);
+
+  // Effet de particules dorées au survol (simulation)
+  catalogBtn.addEventListener('mouseenter', function() {
+    this.style.setProperty('--glow', '0 0 20px rgba(255, 215, 0, 0.8)');
+  });
+
+  catalogBtn.addEventListener('mouseleave', function() {
+    this.style.setProperty('--glow', 'none');
   });
 }
+
+// Initialiser l'animation intelligente du catalogue
+document.addEventListener('DOMContentLoaded', initIntelligentCatalogAnimation);
 </script>
 </body>
 </html>
