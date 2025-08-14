@@ -1578,4 +1578,45 @@ console.log('- newsletterManager.getLatestSubscribers() : Voir derniers abonnés
 console.log('- newsletterManager.exportToExcel() : Exporter en CSV Excel');
 console.log('- newsletterManager.subscribers : Voir tous les abonnés');
 </script>
+   <script>
+document.getElementById('newsletter-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById('newsletter-email').value;
+  const name = document.getElementById('newsletter-name').value;
+  const company = document.getElementById('newsletter-company').value;
+
+  const data = {
+    email: email,
+    attributes: {
+      FIRSTNAME: name,
+      COMPANY: company
+    },
+    listIds: [https://app.brevo.com/contacts/lists/3/details]
+],
+    updateEnabled: true
+  };
+
+  try {
+    const response = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": "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"
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      document.getElementById("success-message").style.display = "block";
+    } else {
+      document.getElementById("error-message").style.display = "block";
+    }
+
+  } catch (error) {
+    console.error("Erreur Brevo:", error);
+    document.getElementById("error-message").style.display = "block";
+  }
+});
+</script>
 </body>
