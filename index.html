@@ -571,6 +571,56 @@
     <!-- End Brevo Form -->
   </div>
 </div>
+<script>
+  // Messages Brevo (tu peux laisser comme ça)
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
+  window.LOCALE = (new URLSearchParams(location.search).get('lang') || 'fr'); // fr par défaut
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
+  window.REQUIRED_ERROR_MESSAGE = "Vous devez renseigner ce champ.";
+  window.GENERIC_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
+  window.translation = { common: { selectedList: '{quantity} liste sélectionnée', selectedLists: '{quantity} listes sélectionnées', selectedOption: '{quantity} sélectionné', selectedOptions: '{quantity} sélectionnés' } };
+  var AUTOHIDE = Boolean(0);
+</script>
+
+<!-- Script Brevo -->
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+<!-- Ouvrir le popup automatiquement à chaque visite -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('newsletter-popup');
+    const closeBtn = document.getElementById('popup-close');
+
+    function openPopup() {
+      popup.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePopup() {
+      popup.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    openPopup(); // Auto‑open
+
+    closeBtn.addEventListener('click', closePopup);
+    popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup(); });
+
+    // Aligner le champ caché locale sur la langue d'URL
+    const localeInput = document.querySelector('#sib-form input[name="locale"]');
+    if (localeInput) localeInput.value = (new URLSearchParams(location.search).get('lang') || 'fr');
+  });
+
+  // (Optionnel) switch de langue via URL ?lang=fr|en
+  function switchLanguage(lang) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', lang);
+    window.location.href = url.toString();
+  }
+  // Exemples de boutons :
+  // <button onclick="switchLanguage('fr')">FR</button>
+  // <button onclick="switchLanguage('en')">EN</button>
+</script>
 
     /* Footer */
     footer {
