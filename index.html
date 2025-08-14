@@ -419,218 +419,6 @@
       color: #FFFFE3;
     }
 
-    /* Newsletter Popup Styles */
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .popup-overlay.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .popup-content {
-      background: linear-gradient(135deg, #111, #000);
-      border: 2px solid #ffd700;
-      border-radius: 20px;
-      padding: 2rem;
-      max-width: 500px;
-      width: 90%;
-      text-align: center;
-      position: relative;
-      transform: scale(0.8) translateY(50px);
-      transition: all 0.3s ease;
-      box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
-    }
-
-    .popup-overlay.show .popup-content {
-      transform: scale(1) translateY(0);
-    }
-
-    .popup-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: none;
-      border: none;
-      color: #ffd700;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .popup-close:hover {
-      color: #ffffe3;
-    }
-
-    .popup-icon {
-      font-size: 3rem;
-      color: #ffd700;
-      margin-bottom: 1rem;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
-    }
-
-    .popup-title {
-      color: #ffffe3;
-      font-size: clamp(1.5rem, 4vw, 1.8rem);
-      margin-bottom: 1rem;
-      font-weight: bold;
-    }
-
-    .popup-description {
-      color: #ffd700;
-      font-size: clamp(1rem, 2.5vw, 1.1rem);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .newsletter-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .form-group label {
-      color: #ffffe3;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
-
-    .form-group input {
-      padding: 12px 15px;
-      border: 2px solid rgba(255, 215, 0, 0.3);
-      border-radius: 10px;
-      background: rgba(0, 0, 0, 0.5);
-      color: #ffffe3;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: #ffd700;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-    }
-
-    .form-group input::placeholder {
-      color: rgba(255, 255, 227, 0.6);
-    }
-
-    .newsletter-submit {
-      background: linear-gradient(135deg, #ffd700, #ffffe3);
-      color: #000;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 25px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .newsletter-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
-    }
-
-    .newsletter-submit:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .loading-spinner {
-      display: none;
-      width: 20px;
-      height: 20px;
-      border: 2px solid transparent;
-      border-top: 2px solid #000;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-left: 10px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .newsletter-submit.loading .loading-spinner {
-      display: inline-block;
-    }
-
-    .success-message, .error-message {
-      margin-top: 1rem;
-      padding: 10px;
-      border-radius: 8px;
-      font-weight: bold;
-      display: none;
-    }
-
-    .success-message {
-      background: rgba(40, 167, 69, 0.2);
-      color: #28a745;
-      border: 1px solid #28a745;
-    }
-
-    .error-message {
-      background: rgba(220, 53, 69, 0.2);
-      color: #dc3545;
-      border: 1px solid #dc3545;
-    }
-
-    /* Newsletter button in navigation */
-    .newsletter-btn {
-      background: linear-gradient(135deg, #D4AF37, #111111);
-      color: white !important;
-      border: none;
-      padding: 0.7rem 1.2rem !important;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      font-size: clamp(0.9rem, 2vw, 1rem);
-      box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
-    }
-
-    .newsletter-btn:hover {
-      background: linear-gradient(135deg, #D4AF37, #1abc9c);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.5);
-      color: white !important;
-    }
-
     /* Footer */
     footer {
       background: #111;
@@ -691,13 +479,15 @@
       }
 
       .carousel-button {
-        display: none;
+        display: none; /* Cache les flèches sur mobile, utilise le swipe */
       }
 
+      /* Améliore l'expérience tactile */
       .carousel-slide {
         padding: 2rem 1rem;
       }
 
+      /* Optimise l'espacement sur mobile */
       main {
         padding: 0.5rem;
       }
@@ -709,10 +499,6 @@
       .services {
         grid-template-columns: 1fr;
         gap: 1rem;
-      }
-
-      .popup-content {
-        padding: 1.5rem;
       }
     }
 
@@ -729,14 +515,6 @@
       nav ul li a.catalog-btn {
         font-size: 0.8rem;
         padding: 0.7rem 1.2rem;
-      }
-
-      .popup-content {
-        padding: 1rem;
-      }
-
-      .newsletter-form {
-        gap: 0.8rem;
       }
     }
 
@@ -895,76 +673,12 @@
 <ul id="nav-menu">
 <li><a href="#accueil">Accueil</a></li>
 <li><a href="#formations">Nos formations</a></li>
-<li><a href="#" class="newsletter-btn" id="newsletter-trigger">📧 Newsletter</a></li>
 <li><a href="#leviers">Nos leviers</a></li>
 <li><a href="#contact">Contact</a></li>
-<li><a href="Catalogue 2025.pdf" class="catalog-btn" target="_blank">CATALOGUE 2025</a></li>
+<li><a href="Catalogue 2025.pdf" class="Catalogue 2025.pdf.pdf" target="_blank">CATALOGUE 2025</a></li>
 </ul>
 </div>
 </nav>
-
-<!-- Newsletter Popup -->
-<div class="popup-overlay" id="newsletter-popup">
-  <div class="popup-content">
-    <button class="popup-close" id="popup-close">&times;</button>
-    
-    <div class="popup-icon">📧</div>
-    
-    <h2 class="popup-title">Restez Informé !</h2>
-    
-    <p class="popup-description">
-      Recevez nos dernières formations, conseils et actualités directement dans votre boîte mail. 
-      Ne manquez aucune opportunité de développer vos compétences !
-    </p>
-    
-    <form class="newsletter-form" id="newsletter-form">
-      <div class="form-group">
-        <label for="newsletter-name">Nom complet</label>
-        <input 
-          type="text" 
-          id="newsletter-name" 
-          name="name" 
-          placeholder="Votre nom complet"
-          required
-        >
-      </div>
-      
-      <div class="form-group">
-        <label for="newsletter-email">Adresse email</label>
-        <input 
-          type="email" 
-          id="newsletter-email" 
-          name="email" 
-          placeholder="votre.email@exemple.com"
-          required
-        >
-      </div>
-      
-      <div class="form-group">
-        <label for="newsletter-company">Entreprise (optionnel)</label>
-        <input 
-          type="text" 
-          id="newsletter-company" 
-          name="company" 
-          placeholder="Nom de votre entreprise"
-        >
-      </div>
-      
-      <button type="submit" class="newsletter-submit" id="newsletter-submit">
-        S'abonner à la newsletter
-        <span class="loading-spinner"></span>
-      </button>
-    </form>
-    
-    <div class="success-message" id="success-message">
-      ✅ Merci ! Votre inscription a été confirmée. Vous recevrez bientôt nos actualités !
-    </div>
-    
-    <div class="error-message" id="error-message">
-      ❌ Une erreur s'est produite. Veuillez réessayer.
-    </div>
-  </div>
-</div>
 
 <main>
 <section class="hero animate-in" id="accueil">
@@ -1060,256 +774,6 @@
 </footer>
 
 <script>
-// Newsletter System with Excel-like data storage simulation
-class NewsletterManager {
-  constructor() {
-    this.subscribers = this.loadSubscribers();
-    this.init();
-  }
-
-  init() {
-    this.setupEventListeners();
-    this.scheduleAutoPopup();
-  }
-
-  setupEventListeners() {
-    const trigger = document.getElementById('newsletter-trigger');
-    const popup = document.getElementById('newsletter-popup');
-    const closeBtn = document.getElementById('popup-close');
-    const form = document.getElementById('newsletter-form');
-
-    // Open popup
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.showPopup();
-    });
-
-    // Close popup
-    closeBtn.addEventListener('click', () => this.closePopup());
-    
-    // Close on outside click
-    popup.addEventListener('click', (e) => {
-      if (e.target === popup) this.closePopup();
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && popup.classList.contains('show')) {
-        this.closePopup();
-      }
-    });
-
-    // Form submission
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      this.handleFormSubmission(e);
-    });
-  }
-
-  showPopup() {
-    const popup = document.getElementById('newsletter-popup');
-    popup.classList.add('show');
-    document.body.style.overflow = 'hidden';
-    
-    // Focus on first input for accessibility
-    setTimeout(() => {
-      document.getElementById('newsletter-name').focus();
-    }, 300);
-  }
-
-  closePopup() {
-    const popup = document.getElementById('newsletter-popup');
-    popup.classList.remove('show');
-    document.body.style.overflow = '';
-    
-    // Reset form and messages
-    this.resetForm();
-  }
-
-  resetForm() {
-    const form = document.getElementById('newsletter-form');
-    const submitBtn = document.getElementById('newsletter-submit');
-    const successMsg = document.getElementById('success-message');
-    const errorMsg = document.getElementById('error-message');
-
-    form.reset();
-    submitBtn.classList.remove('loading');
-    submitBtn.disabled = false;
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'none';
-  }
-
-  async handleFormSubmission(event) {
-    const form = event.target;
-    const submitBtn = document.getElementById('newsletter-submit');
-    const successMsg = document.getElementById('success-message');
-    const errorMsg = document.getElementById('error-message');
-
-    // Get form data
-    const formData = new FormData(form);
-    const subscriberData = {
-      name: formData.get('name').trim(),
-      email: formData.get('email').trim().toLowerCase(),
-      company: formData.get('company').trim(),
-      subscriptionDate: new Date().toISOString(),
-      id: this.generateId()
-    };
-
-    // Validate email
-    if (!this.isValidEmail(subscriberData.email)) {
-      this.showError('Veuillez entrer une adresse email valide.');
-      return;
-    }
-
-    // Check if already subscribed
-    if (this.isAlreadySubscribed(subscriberData.email)) {
-      this.showError('Cette adresse email est déjà inscrite à notre newsletter.');
-      return;
-    }
-
-    // Show loading state
-    submitBtn.classList.add('loading');
-    submitBtn.disabled = true;
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'none';
-
-    try {
-      // Simulate API call delay
-      await this.delay(1500);
-      
-      // Save subscriber
-      this.addSubscriber(subscriberData);
-      
-      // Show success and generate Excel data
-      this.showSuccess();
-      this.generateExcelData();
-      
-      // Auto-close popup after success
-      setTimeout(() => {
-        this.closePopup();
-      }, 3000);
-
-    } catch (error) {
-      console.error('Subscription error:', error);
-      this.showError('Une erreur est survenue. Veuillez réessayer.');
-    } finally {
-      submitBtn.classList.remove('loading');
-      submitBtn.disabled = false;
-    }
-  }
-
-  addSubscriber(data) {
-    this.subscribers.push(data);
-    this.saveSubscribers();
-    console.log('Nouvel abonné ajouté:', data);
-  }
-
-  loadSubscribers() {
-    // In a real application, this would load from a database
-    // For demo purposes, we use in-memory storage
-    return JSON.parse(sessionStorage.getItem('newsletter_subscribers') || '[]');
-  }
-
-  saveSubscribers() {
-    // In a real application, this would save to a database
-    // For demo purposes, we use sessionStorage
-    sessionStorage.setItem('newsletter_subscribers', JSON.stringify(this.subscribers));
-  }
-
-  generateExcelData() {
-    // Generate Excel-compatible CSV data
-    const csvHeader = 'ID,Nom,Email,Entreprise,Date d\'inscription\n';
-    const csvData = this.subscribers.map(sub => 
-      `"${sub.id}","${sub.name}","${sub.email}","${sub.company || ''}","${new Date(sub.subscriptionDate).toLocaleDateString('fr-FR')}"`
-    ).join('\n');
-    
-    const csvContent = csvHeader + csvData;
-    
-    // Create downloadable CSV file (Excel compatible)
-    const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    
-    link.setAttribute('href', url);
-    link.setAttribute('download', `newsletter_subscribers_${new Date().toISOString().split('T')[0]}.csv`);
-    link.style.visibility = 'hidden';
-    
-    document.body.appendChild(link);
-    
-    // Auto-download for admin (in real app, this would be admin-only)
-    console.log('Données Excel générées. Abonnés totaux:', this.subscribers.length);
-    console.log('CSV Data:', csvContent);
-    
-    // Uncomment the next line to auto-download CSV file
-    // link.click();
-    
-    document.body.removeChild(link);
-  }
-
-  scheduleAutoPopup() {
-    // Show popup after 30 seconds if not already shown
-    const hasSeenPopup = sessionStorage.getItem('newsletter_popup_shown');
-    
-    if (!hasSeenPopup) {
-      setTimeout(() => {
-        // Only show if user is still active (moved mouse recently)
-        if (!document.hidden) {
-          this.showPopup();
-          sessionStorage.setItem('newsletter_popup_shown', 'true');
-        }
-      }, 30000); // 30 seconds
-    }
-  }
-
-  // Utility methods
-  generateId() {
-    return 'sub_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-  }
-
-  isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
-  isAlreadySubscribed(email) {
-    return this.subscribers.some(sub => sub.email === email);
-  }
-
-  showSuccess() {
-    const successMsg = document.getElementById('success-message');
-    successMsg.style.display = 'block';
-  }
-
-  showError(message) {
-    const errorMsg = document.getElementById('error-message');
-    errorMsg.textContent = '❌ ' + message;
-    errorMsg.style.display = 'block';
-  }
-
-  delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  // Admin method to export all subscribers
-  exportToExcel() {
-    this.generateExcelData();
-    const link = document.querySelector('a[download]');
-    if (link) link.click();
-  }
-
-  // Get subscriber count
-  getSubscriberCount() {
-    return this.subscribers.length;
-  }
-
-  // Get latest subscribers
-  getLatestSubscribers(count = 5) {
-    return this.subscribers
-      .sort((a, b) => new Date(b.subscriptionDate) - new Date(a.subscriptionDate))
-      .slice(0, count);
-  }
-}
-
 // Menu mobile
 const mobileToggle = document.getElementById('mobile-toggle');
 const navMenu = document.getElementById('nav-menu');
@@ -1321,7 +785,7 @@ mobileToggle.addEventListener('click', () => {
 
 // Fermer le menu mobile lors du clic sur un lien
 navMenu.addEventListener('click', (e) => {
-  if (e.target.tagName === 'A' && !e.target.classList.contains('catalog-btn') && !e.target.classList.contains('newsletter-btn')) {
+  if (e.target.tagName === 'A' && !e.target.classList.contains('catalog-btn')) {
     navMenu.classList.remove('show');
     mobileToggle.textContent = '☰';
   }
@@ -1447,17 +911,8 @@ class MobileCarousel {
   }
 }
 
-// Initialize all components
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Newsletter Manager
-  window.newsletterManager = new NewsletterManager();
-  
-  // Initialize Carousel
-  new MobileCarousel();
-  
-  // Initialize Catalog Button Animation
-  initIntelligentCatalogAnimation();
-});
+// Initialiser le carousel
+new MobileCarousel();
 
 // Smooth scroll pour la navigation
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -1570,12 +1025,9 @@ function initIntelligentCatalogAnimation() {
   });
 }
 
-// Console commands for admin 
-console.log('🎯 ATKAN CONSULTING - Newsletter System Ready!');
-console.log('📊 Admin Commands:');
-console.log('- newsletterManager.getSubscriberCount() : Voir nombre d\'abonnés');
-console.log('- newsletterManager.getLatestSubscribers() : Voir derniers abonnés');
-console.log('- newsletterManager.exportToExcel() : Exporter en CSV Excel');
-console.log('- newsletterManager.subscribers : Voir tous les abonnés');
+// Initialiser l'animation intelligente du catalogue
+document.addEventListener('DOMContentLoaded', initIntelligentCatalogAnimation);
 </script>
 </body>
+</html>
+
