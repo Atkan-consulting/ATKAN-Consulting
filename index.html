@@ -81,6 +81,20 @@
       justify-content: center;
       border-radius: 50%;
     }
+/* Champs input et textarea en fond noir + texte en blanc */
+#sib-container input,
+#sib-container textarea,
+#sib-container select {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #d4af37 !important; /* contour doré */
+}
+
+/* Placeholders en gris clair pour rester lisibles */
+#sib-container input::placeholder,
+#sib-container textarea::placeholder {
+    color: #ccc !important;
+}
 
     .newsletter-close:hover {
       background: rgba(212, 175, 55, 0.2);
