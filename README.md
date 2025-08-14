@@ -64,6 +64,5 @@ tel: 06-50-41-71-52
 ---
 
 > *« Un bon formateur ne sera jamais remplacé par une machine.  
-Mais un formateur qui sait utiliser l’IA remplacera celui qui ne le fait pas. »*  
-- Kevin Kelly
+Mais un formateur qui sait utiliser l’IA remplacera celui qui ne le fait pas. »* Kevin Kelly
 
