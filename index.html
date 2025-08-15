@@ -962,147 +962,99 @@
 </button>
 
 <!-- Pop-up Newsletter -->
-<!-- CSS recommandé dans le <head> -->
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap');
+<div class="newsletter-overlay" id="newsletter-overlay">
+  <div class="newsletter-popup">
+    <button class="newsletter-close" id="newsletter-close" aria-label="Fermer le formulaire">×</button>
 
-  .brevo-form-container {
-    max-width: 540px;
-    margin: auto;
-    background-color: #000;
-    border: 1px solid #d4af37;
-    border-radius: 4px;
-    padding: 20px;
-    font-family: Helvetica, sans-serif;
-    color: #fff;
-  }
+    <div class="sib-form">
+      <div id="sib-form-container" class="sib-form-container">
+        <!-- Message d'erreur -->
+        <div id="error-message" class="sib-form-message-panel" style="max-width:540px; color:#661d1d; background-color:#ffeded; border:1px solid #ff4949; border-radius:3px; font-family:Helvetica, sans-serif; font-size:16px;">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" aria-hidden="true">
+              <path d="..."></path>
+            </svg>
+            <span>Nous n'avons pas pu confirmer votre inscription.</span>
+          </div>
+        </div>
 
-  .brevo-form-title {
-    font-size: 28px;
-    font-weight: 700;
-    text-align: center;
-    color: #d4af37;
-    margin-bottom: 10px;
-  }
+        <!-- Message de succès -->
+        <div id="success-message" class="sib-form-message-panel" style="max-width:540px; color:#085229; background-color:#e7faf0; border:1px solid #13ce66; border-radius:3px; font-family:Helvetica, sans-serif; font-size:16px;">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" aria-hidden="true">
+              <path d="..."></path>
+            </svg>
+            <span>Votre inscription est confirmée.</span>
+          </div>
+        </div>
 
-  .brevo-form-description {
-    text-align: left;
-    margin-bottom: 20px;
-  }
+        <!-- Formulaire -->
+        <div id="sib-container" class="sib-container--large sib-container--vertical">
+          <form id="sib-form" method="POST" action="https://1e301ca2.sibforms.com/serve/MUIFAHeexebYRl0ZQ-NeoWrMAIuoSHugE6qarHbt0IpkHouZPK9_5jyjNzbz8yofQqgoK43oIb9U2uo71LxdsFZx0aSnQqcdc-TxlbYeXhSSpQO_9yz3_GWHfX4hnF3oXLZUKT17OB4RXfRZdIXa9V7BCMk-f_11paL4p5hY2R0FduBCpN16NzvJ-gQuuT6eex2ATia3h7rccA9o" data-type="subscription">
 
-  .brevo-form-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
+            <div class="sib-form-block" style="text-align:center; font-size:24px; font-weight:700; color:#d4af37; font-family:Helvetica, sans-serif;">
+              <p>📧</p>
+              <p>Newsletter ATKAN Consulting</p>
+              <p style="font-size:16px; color:#fff; font-weight:400;">Inscrivez-vous à notre newsletter pour suivre nos actualités.</p>
+            </div>
 
-  .brevo-form-label {
-    font-weight: 700;
-    color: #d4af37;
-    display: block;
-    margin-bottom: 5px;
-  }
+            <!-- NOM -->
+            <div class="sib-input sib-form-block">
+              <label for="NOM" style="color:#d4af37; font-weight:700;">Nom</label>
+              <input type="text" id="NOM" name="NOM" placeholder="Votre nom" maxlength="200" autocomplete="family-name" required class="input" />
+            </div>
 
-  .brevo-form-input,
-  .brevo-form-select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-  }
+            <!-- PRENOM -->
+            <div class="sib-input sib-form-block">
+              <label for="PRENOM" style="color:#d4af37; font-weight:700;">Prénom</label>
+              <input type="text" id="PRENOM" name="PRENOM" placeholder="Votre prénom" maxlength="200" autocomplete="given-name" required class="input" />
+            </div>
 
-  .brevo-optin {
-    margin-top: 10px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 14px;
-    color: #d4af37;
-  }
+            <!-- TÉLÉPHONE -->
+            <div class="sib-sms-field sib-form-block">
+              <label for="SMS" style="color:#d4af37; font-weight:700;">Téléphone</label>
+              <div class="sib-sms-input-wrapper" style="display:flex; gap:8px;">
+                <select name="SMS__COUNTRY_CODE" required class="input" aria-label="Indicatif">
+                  <option value="+33" selected>+33 FR</option>
+                  <option value="+1">+1 US</option>
+                  <option value="+44">+44 GB</option>
+                  <option value="+49">+49 DE</option>
+                  <option value="+39">+39 IT</option>
+                  <option value="+34">+34 ES</option>
+                </select>
+                <input type="tel" id="SMS" name="SMS" placeholder="Téléphone" autocomplete="tel" required class="input" />
+              </div>
+            </div>
 
-  .brevo-form-button {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: 700;
-    background: linear-gradient(135deg, #d4af37, #ffd700);
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    color: #000;
-    text-align: center;
-  }
+            <!-- EMAIL -->
+            <div class="sib-input sib-form-block">
+              <label for="EMAIL" style="color:#d4af37; font-weight:700;">Email</label>
+              <input type="email" id="EMAIL" name="EMAIL" placeholder="votre@email.com" autocomplete="email" required class="input" />
+            </div>
 
-  .brevo-error,
-  .brevo-success {
-    font-size: 14px;
-    padding: 10px;
-    border-radius: 3px;
-    margin-bottom: 15px;
-  }
+            <!-- OPT-IN -->
+            <div class="sib-optin sib-form-block">
+              <label for="OPT_IN" style="display:flex; align-items:flex-start; gap:8px; color:#d4af37;">
+                <input type="checkbox" id="OPT_IN" name="OPT_IN" required />
+                <span>J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité et mentions légales.</span>
+              </label>
+            </div>
 
-  .brevo-error {
-    color: #661d1d;
-    background-color: #ffeded;
-    border: 1px solid #ff4949;
-  }
+            <!-- BOUTON -->
+            <div class="sib-form-block" style="text-align:center;">
+              <button type="submit" class="sib-form-block__button" style="font-size:18px; padding:15px 30px; border-radius:25px; border:0; font-weight:700; background:linear-gradient(135deg, #d4af37, #ffd700); color:#000;">S'INSCRIRE</button>
+            </div>
 
-  .brevo-success {
-    color: #085229;
-    background-color: #e7faf0;
-    border: 1px solid #13ce66;
-  }
-</style>
-
-<!-- Formulaire HTML -->
-<div class="brevo-form-container">
-  <div class="brevo-form-title">Newsletter ATKAN Consulting</div>
-  <div class="brevo-form-description">Inscrivez-vous à notre newsletter pour suivre nos actualités.</div>
-
-  <!-- Message d'erreur -->
-  <div class="brevo-error" id="error-message" style="display:none;">
-    Nous n'avons pas pu confirmer votre inscription.
+            <!-- Champs cachés -->
+            <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+            <input type="hidden" name="locale" value="fr">
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- Message de succès -->
-  <div class="brevo-success" id="success-message" style="display:none;">
-    ATKAN CONSULTING vous remercie et vous confirme votre inscription.
-  </div>
-
-  <form id="sib-form" method="POST" action="https://1e301ca2.sibforms.com/serve/MUIFAPbXSrEuo2azxm0wZlyRx7KA8fhIoBTs0CD2KMMBzR-GzFd88qjIWpZYqIN4mptA4rgJ_DvhcD-oIZRhNhjs8ewKnexjSahsl8fli7FkX3CKBHAKmFJBMAxqDmQJDIPiljNm7QpMn7nsvRX9uyxCatZ9n-V-U9vLUsb1ObG1COkce7PZ4LWMIA466NmVFR50INtHzAWV9fFJ">
-
-    <div class="brevo-form-group">
-      <label class="brevo-form-label" for="NOM">Nom</label>
-      <input class="brevo-form-input" type="text" id="NOM" name="NOM" required autocomplete="family-name" placeholder="Votre nom">
-    </div>
-
-    <div class="brevo-form-group">
-      <label class="brevo-form-label" for="PRENOM">Prénom</label>
-      <input class="brevo-form-input" type="text" id="PRENOM" name="PRENOM" required autocomplete="given-name" placeholder="Votre prénom">
-    </div>
-
-    <div class="brevo-form-group">
-      <label class="brevo-form-label" for="SMS">Téléphone</label>
-      <input class="brevo-form-input" type="tel" id="SMS" name="SMS" required autocomplete="tel" placeholder="+33 6 12 34 56 78">
-    </div>
-
-    <div class="brevo-form-group">
-      <label class="brevo-form-label" for="EMAIL">Adresse email</label>
-      <input class="brevo-form-input" type="email" id="EMAIL" name="EMAIL" required autocomplete="email" placeholder="votre@email.com">
-    </div>
-
-    <div class="brevo-optin">
-      <input type="checkbox" id="OPT_IN" name="OPT_IN" required>
-      <label for="OPT_IN">J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité.</label>
-    </div>
-
-    <input type="hidden" name="locale" value="fr">
-    <input type="text" name="email_address_check" style="display:none;">
-
-    <button class="brevo-form-button" type="submit">S'INSCRIRE</button>
-  </form>
 </div>
+
 
 
 <footer>
