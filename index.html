@@ -396,7 +396,7 @@
     }
 
     .carousel-slide h2 {
-      color: #FFFFFF;
+      color: #ffffff ;
       font-size: clamp(1.3rem, 4vw, 1.8rem);
       margin-bottom: 1rem;
       line-height: 1.3;
@@ -514,7 +514,7 @@
 
     .intro h2 {
       font-size: clamp(1.5rem, 4vw, 2rem);
-      color: #FFFFE3;
+      color: #ffffff;
       margin-bottom: 1rem;
     }
 
@@ -853,6 +853,63 @@
 </div>
 </div>
 </header>
+{
+<style id="brevo-input-override">
+  /* Inputs + selects dans la popup */
+  #newsletter-overlay .sib-form input,
+  #newsletter-overlay .sib-form select,
+  #newsletter-overlay .sib-form textarea,
+  #newsletter-overlay .sib-form .input {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #d4af37 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+    caret-color: #fff;
+  }
+
+  /* Placeholder lisible */
+  #newsletter-overlay .sib-form input::placeholder,
+  #newsletter-overlay .sib-form textarea::placeholder {
+    color: #aaaaaa !important;
+    opacity: 1;
+  }
+
+  /* Sélecteur pays + options */
+  #newsletter-overlay .sib-form select {
+    background-color: #000 !important;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  /* Certaines UAs utilisent <option> pour la couleur de fond/texte */
+  #newsletter-overlay .sib-form select option {
+    background-color: #000;
+    color: #fff;
+  }
+
+  /* Focus */
+  #newsletter-overlay .sib-form input:focus,
+  #newsletter-overlay .sib-form select:focus,
+  #newsletter-overlay .sib-form textarea:focus {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.25) !important;
+    outline: none !important;
+  }
+
+  /* Autofill (Chrome/Safari) : évite le fond jaune */
+  #newsletter-overlay .sib-form input:-webkit-autofill,
+  #newsletter-overlay .sib-form input:-webkit-autofill:hover,
+  #newsletter-overlay .sib-form input:-webkit-autofill:focus,
+  #newsletter-overlay .sib-form textarea:-webkit-autofill,
+  #newsletter-overlay .sib-form select:-webkit-autofill {
+    -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: #fff;
+  }
+</style>
 
 <nav>
 <div class="nav-container">
