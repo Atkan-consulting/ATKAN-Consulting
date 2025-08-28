@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ATKAN CONSULTING</title>
-<meta content="ATKAN CONSULTING - Formations et accompagnement professionnel" name="description"/>
+<title>ATKAN Consulting - Formation pédagogique innovante avec IA</title>
+<meta name="description" content="Formations sur mesure en pédagogie active, IA générative et leadership. Accompagnement personnalisé pour formateurs et responsables pédagogiques."/>
+<meta name="keywords" content="formation pédagogique, IA générative, pédagogie active, formation professionnelle, coaching, leadership"/>
+<meta name="author" content="ATKAN Consulting"/>
+<meta property="og:title" content="ATKAN Consulting - Formation pédagogique innovante avec IA"/>
+<meta property="og:description" content="Formations sur mesure en pédagogie active, IA générative et leadership. Accompagnement personnalisé pour formateurs et responsables pédagogiques."/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://atkan-consulting.fr"/>
 <style>
     * {
       margin: 0;
@@ -194,6 +199,7 @@
       margin-bottom: 1rem;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      alt: "Logo ATKAN Consulting - Formation pédagogie active";
     }
 
     header h1 {
@@ -264,8 +270,8 @@
       transform: translateY(-2px);
     }
 
-    /* Bouton catalogue avec animation intelligente qui attire l'œil */
-    nav ul li a.catalog-btn {
+    /* Call-to-Action optimisé */
+    .cta-button, nav ul li a.catalog-btn {
       background: linear-gradient(135deg, #ffffe3, #ffd700);
       color: #000;
       font-weight: bold;
@@ -275,9 +281,14 @@
       position: relative;
       overflow: hidden;
       animation: intelligentPulse 3s ease-in-out infinite;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px 0;
     }
 
-    nav ul li a.catalog-btn:hover {
+    .cta-button:hover, nav ul li a.catalog-btn:hover {
       background: linear-gradient(135deg, #ffd700, #FFFFE3);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(212, 175, 55, 0.8);
@@ -302,23 +313,6 @@
         box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
         transform: scale(1);
       }
-    }
-
-    /* Effet de brillance qui traverse le bouton */
-    nav ul li a.catalog-btn::before {
-      content: none;
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      transition: left 0.6s ease;
-      z-index: 1;
-    }
-
-    nav ul li a.catalog-btn:hover::before {
-      left: 100%;
     }
 
     main {
@@ -395,8 +389,8 @@
       min-height: 280px;
     }
 
-    .carousel-slide h2 {
-      color: #ffffff ;
+    .carousel-slide h3 {
+      color: #ffffff;
       font-size: clamp(1.3rem, 4vw, 1.8rem);
       margin-bottom: 1rem;
       line-height: 1.3;
@@ -549,6 +543,34 @@
       color: #FFFFE3;
     }
 
+    /* FAQ Section */
+    .faq-section {
+      background: linear-gradient(135deg, #111, #000);
+      padding: clamp(2rem, 5vw, 3rem);
+      border-radius: 20px;
+      margin: 3rem 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255, 215, 0, 0.1);
+    }
+
+    .faq-item {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      padding-bottom: 1rem;
+    }
+
+    .faq-question {
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      color: #FFFFFF;
+      line-height: 1.6;
+    }
+
     /* Footer */
     footer {
       background: #111;
@@ -609,15 +631,13 @@
       }
 
       .carousel-button {
-        display: none; /* Cache les flèches sur mobile, utilise le swipe */
+        display: none;
       }
 
-      /* Améliore l'expérience tactile */
       .carousel-slide {
         padding: 2rem 1rem;
       }
 
-      /* Optimise l'espacement sur mobile */
       main {
         padding: 0.5rem;
       }
@@ -738,7 +758,7 @@
     }
 
     /* Animation par défaut pour tous les éléments */
-    header, nav, .hero, .section-title, .service, .intro, .contact-section, .carousel-container {
+    header, nav, .hero, .section-title, .service, .intro, .contact-section, .carousel-container, .faq-section {
       opacity: 0;
       animation-fill-mode: forwards;
     }
@@ -780,6 +800,10 @@
       animation: fadeInScale 0.8s ease-out 0.2s forwards;
     }
 
+    .faq-section {
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+
     .contact-section {
       animation: fadeInUp 0.8s ease-out 0.2s forwards;
     }
@@ -795,6 +819,17 @@
       body {
         background-color: #000;
       }
+    }
+
+    /* Schema.org JSON-LD pour SEO */
+    .visually-hidden {
+      position: absolute !important;
+      clip: rect(1px 1px 1px 1px);
+      padding: 0 !important;
+      border: 0 !important;
+      height: 1px !important;
+      width: 1px !important;
+      overflow: hidden;
     }
   </style>
   <style>
@@ -842,18 +877,68 @@
   }
 </style>
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
+<!-- Schema.org JSON-LD pour SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ATKAN Consulting",
+  "description": "Formation pédagogique innovante avec IA générative, pédagogie active et leadership. Accompagnement personnalisé pour formateurs et responsables pédagogiques.",
+  "url": "https://atkan-consulting.fr",
+  "logo": "https://atkan-consulting.fr/logo.png.jpg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+33650417152",
+    "email": "contact@atkan-consulting.fr",
+    "contactType": "customer service",
+    "areaServed": "FR",
+    "availableLanguage": "French"
+  },
+  "sameAs": [],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "FR"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "ATKAN Consulting"
+  },
+  "services": [
+    {
+      "@type": "Service",
+      "name": "Pédagogies actives et apprentissage",
+      "description": "Formation en classe inversée, pédagogie par projet et coopérative avec outils Canva, Padlet, Genially, Quizizz"
+    },
+    {
+      "@type": "Service", 
+      "name": "Formation avec IA générative",
+      "description": "Création de supports avec ChatGPT, Notion AI, Gemini et formation aux enjeux éthiques de l'IA"
+    },
+    {
+      "@type": "Service",
+      "name": "Leadership et coaching",
+      "description": "Accompagnement en leadership, coaching, conduite du changement et cohésion d'équipe"
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<!-- Skip to main content pour accessibilité -->
+<a href="#main-content" class="visually-hidden">Aller au contenu principal</a>
+
 <header class="custom-header">
 <div class="header-content">
-<img alt="Logo ATKAN" src="logo.png.jpg"/>
+<img alt="Logo ATKAN Consulting - Formation pédagogie active avec IA générative" src="logo.png.jpg"/>
 <div>
-<h1>ATKAN CONSULTING</h1>
+<h1>ATKAN Consulting</h1>
+ <p>Pédagogies innovantes</p>
 <p>Action &amp; Accomplissement</p>
 </div>
 </div>
 </header>
-{
+
 <style id="brevo-input-override">
   /* Inputs + selects dans la popup */
   #newsletter-overlay .sib-form input,
@@ -913,78 +998,80 @@
 
 <nav>
 <div class="nav-container">
-<button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Menu">☰</button>
-<ul id="nav-menu">
-<li><a href="#accueil">Accueil</a></li>
-<li><a href="#formations">Nos formations</a></li>
-<li><a href="#leviers">Nos leviers</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><a href="Catalogue 2025.pdf" class="catalog-btn" target="_blank">CATALOGUE 2025</a></li>
+<button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Menu de navigation" aria-expanded="false">☰</button>
+<ul id="nav-menu" role="menubar">
+<li role="none"><a href="#accueil" role="menuitem">Accueil</a></li>
+<li role="none"><a href="#formations" role="menuitem">Nos formations</a></li>
+<li role="none"><a href="#leviers" role="menuitem">Nos leviers</a></li>
+<li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
+<li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+<li role="none"><a href="Catalogue 2025.pdf" class="catalog-btn" target="_blank" rel="noopener" role="menuitem">CATALOGUE 2025</a></li>
 </ul>
 </div>
 </nav>
 
-<main>
+<main id="main-content">
 <section class="hero animate-in" id="accueil">
-<h1>Bienvenue !</h1>
+<h1>Bienvenue chez ATKAN CONSULTING !</h1>
 <p>Chez ATKAN CONSULTING, pas de solutions toutes faites</p>
 <p>Chaque organisation est unique. C'est pourquoi nous co-construisons chaque mission avec vous, pour répondre concrètement à vos enjeux et générer un impact humain, durable et mesurable.</p>
 <p>Dans un monde professionnel en constante mutation, nous croyons à la force de l'intelligence collective, à l'adaptation sur le terrain, et à une approche profondément ancrée dans la réalité de vos équipes.</p>
+<a href="#contact" class="cta-button">Demander un devis personnalisé</a>
 </section>
 
-<h2 class="section-title" id="formations">Nos Formations</h2>
+<h2 class="section-title" id="formations">Nos Formations Spécialisées</h2>
 
-<div class="carousel-container">
+<div class="carousel-container" role="region" aria-label="Carrousel des formations" aria-live="polite">
 <div class="carousel-track" id="carousel-track">
 <div class="carousel-slide">
-<h2>Pédagogies actives et apprentissage</h2>
+<h3>Pédagogies Actives et Apprentissage</h3>
 <p>Comprendre et expérimenter la classe inversée, la pédagogie par projet et coopérative.<br/>Outils : Canva, Padlet, Genially, Quizizz</p>
 </div>
 <div class="carousel-slide">
-<h2>Supports visuels interactifs</h2>
+<h3>Supports visuels interactifs</h3>
 <p>Créer des contenus animés et engageants avec les principes du design pédagogique.<br/>Outils : Feedbackfruits, Canva, Thinglink, Powtoon</p>
 </div>
 <div class="carousel-slide">
-<h2>Formation avec l'IA générative</h2>
+<h3>Formation avec l'IA Générative</h3>
 <p>Créer des supports avec ChatGPT, Notion AI, Gemini, et comprendre les enjeux éthiques de l'IA.</p>
 </div>
 <div class="carousel-slide">
-<h2>Classe virtuelle efficace</h2>
+<h3>Classe virtuelle efficace</h3>
 <p>Structurer un parcours à distance, animer et suivre une classe virtuelle participative.<br/>Outils : Zoom, Teams, Klaxoon, Classroom</p>
 </div>
 <div class="carousel-slide">
-<h2>Évaluation formative et numérique</h2>
+<h3>Évaluation formative et numérique</h3>
 <p>Différencier les évaluations et intégrer des outils numériques adaptés.<br/>Outils : Socrative, Wooclap, Forms</p>
 </div>
 <div class="carousel-slide">
-<h2>Pédagogue augmenté avec IA</h2>
+<h3>Pédagogue augmenté avec IA</h3>
 <p>Automatiser des tâches, personnaliser les parcours et simuler des feedbacks avec l'IA.<br/>Outils : ChatGPT, Gamma, Synthesia</p>
 </div>
 <div class="carousel-slide">
-<h2>Formations modulables & accompagnement</h2>
+<h3>Formations modulables & accompagnement</h3>
 <p>Leadership, coaching, conduite du changement et cohésion d'équipe.<br/>Outils : Klaxoon, Miro, Wooclap</p>
 </div>
 </div>
-<button class="carousel-button prev" id="prev-btn">❮</button>
-<button class="carousel-button next" id="next-btn">❯</button>
-<div class="carousel-indicators" id="indicators"></div>
+<button class="carousel-button prev" id="prev-btn" aria-label="Formation précédente">❮</button>
+<button class="carousel-button next" id="next-btn" aria-label="Formation suivante">❯</button>
+<div class="carousel-indicators" id="indicators" role="tablist" aria-label="Indicateurs de formation"></div>
 </div>
 
 <section id="leviers">
 <h2 class="section-title">Nos leviers d'action</h2>
 <div class="services">
-<div class="service">
+<article class="service">
 <h3>Pédagogies innovantes</h3>
 <p>Favoriser l'engagement par des méthodes actives, expérientielles et adaptées à vos contextes.</p>
-</div>
-<div class="service">
+</article>
+<article class="service">
 <h3>Formations sur mesure</h3>
 <p>Des parcours ciblés, conçus autour de vos besoins opérationnels et de vos priorités stratégiques.</p>
-</div>
-<div class="service">
+</article>
+<article class="service">
 <h3>Cohésion & coopération</h3>
 <p>Recréer la confiance, fluidifier les relations et renforcer le travail collectif au quotidien.</p>
-</div>
+</article>
 </div>
 </section>
 
@@ -1000,28 +1087,51 @@
 <h2>DE L'INTENTION À LA TRANSFORMATION</h2>
 <p>Vers une pédagogie plus active, plus humaine et augmentée.</p>
 <p>Nos formations s'adressent aux formateurs, enseignants, responsables pédagogiques et experts souhaitant faire évoluer leurs pratiques vers plus d'impact, d'agilité et de sens.</p>
+<a href="#contact" class="cta-button">Découvrir nos méthodes</a>
+</div>
+</section>
+
+<!-- Nouvelle section FAQ pour le SEO -->
+<section class="faq-section" id="faq">
+<h2 class="section-title">Questions fréquentes</h2>
+<div class="faq-item">
+<h3 class="faq-question">Quels sont les avantages de la pédagogie active ?</h3>
+<p class="faq-answer">La pédagogie active améliore l'engagement des apprenants, favorise la mémorisation et développe l'autonomie. Elle permet une meilleure adaptation aux différents styles d'apprentissage et renforce la motivation intrinsèque.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">Comment l'IA peut-elle améliorer la formation ?</h3>
+<p class="faq-answer">L'IA générative permet de créer du contenu personnalisé, d'automatiser certaines tâches répétitives, de générer des exercices adaptés et de fournir un feedback instantané aux apprenants. Elle augmente l'efficacité pédagogique tout en respectant l'éthique.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">Vos formations sont-elles certifiantes ?</h3>
+<p class="faq-answer">Oui, nos formations peuvent être certifiantes selon vos besoins. Nous travaillons avec des organismes certificateurs reconnus et adaptons nos parcours aux exigences de qualification de votre secteur.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">Proposez-vous des formations à distance ?</h3>
+<p class="faq-answer">Absolument ! Nous maîtrisons les outils de classe virtuelle et proposons des formations 100% à distance, hybrides ou en présentiel selon vos contraintes et préférences. Nos méthodes garantissent l'interactivité même à distance.</p>
 </div>
 </section>
 
 <section class="contact-section" id="contact">
 <h2 class="section-title">Contactez-Nous</h2>
 <div class="contact-info">
-<p><strong>Email :</strong> <a href="mailto:contact@atkan-consulting.fr" style="color: #ffd700; text-decoration: none;">contact@atkan-consulting.fr</a></p>
+<p><strong>Email :</strong> <a href="mailto:atkanconsulting.pdl@gmail.com" style="color: #ffd700; text-decoration: none;">atkanconsulting.pdl@gmail.com</a></p>
 <p><strong>Téléphone :</strong> <a href="tel:+33650417152" style="color: #ffd700; text-decoration: none;">+33 6 50 41 71 52</a></p>
-<p>Prêt à transformer votre organisation ? Contactez-nous pour un échange personnalisé.</p>
+<p>Prêt(e) à transformer votre organisation ? Contactez-nous pour un échange personnalisé.</p>
+<a href="mailto:contact@atkan-consulting.fr" class="cta-button">Demander un devis personnalisé</a>
 </div>
 </section>
 </main>
 
 <!-- Bouton déclencheur du pop-up newsletter -->
-<button class="newsletter-trigger" id="newsletter-btn">
+<button class="newsletter-trigger" id="newsletter-btn" aria-label="S'inscrire à la newsletter">
   📧 Newsletter
 </button>
 
-<!-- Pop-up Newsletter -->
-<div class="newsletter-overlay" id="newsletter-overlay">
+<!-- Pop-up Newsletter avec amélioration accessibilité -->
+<div class="newsletter-overlay" id="newsletter-overlay" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
   <div class="newsletter-popup">
-    <button class="newsletter-close" id="newsletter-close">×</button>
+    <button class="newsletter-close" id="newsletter-close" aria-label="Fermer la newsletter">×</button>
     
     <div class="sib-form">
       <div id="sib-form-container" class="sib-form-container">
@@ -1052,7 +1162,7 @@
             <div style="padding: 8px 0;">
               <div class="sib-form-block" style="font-size:31px; text-align:center; font-weight:700; font-family:Helvetica, sans-serif; color:#d4af37; background-color:transparent; text-align:center">
                 <p>📧</p>
-                <p>Newsletter ATKAN Consulting</p>
+                <p id="newsletter-title">Newsletter ATKAN Consulting</p>
               </div>
             </div>
             <div style="padding: 8px 0;">
@@ -1068,7 +1178,7 @@
                   <div class="form__label-row ">
                     <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#d4af37;" for="NOM" data-required="*">Entrez votre NOM</label>
                     <div class="entry__field">
-                      <input class="input " maxlength="200" type="text" id="NOM" name="NOM" autocomplete="off" placeholder="NOM" data-required="true" required />
+                      <input class="input " maxlength="200" type="text" id="NOM" name="NOM" autocomplete="family-name" placeholder="NOM" data-required="true" required />
                     </div>
                   </div>
                   <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
@@ -1081,7 +1191,7 @@
                   <div class="form__label-row ">
                     <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#d4af37;" for="PRENOM" data-required="*">Entrez votre PRENOM</label>
                     <div class="entry__field">
-                      <input class="input " maxlength="200" type="text" id="PRENOM" name="PRENOM" autocomplete="off" placeholder="PRENOM" data-required="true" required />
+                      <input class="input " maxlength="200" type="text" id="PRENOM" name="PRENOM" autocomplete="given-name" placeholder="PRENOM" data-required="true" required />
                     </div>
                   </div>
                   <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
@@ -1096,7 +1206,7 @@
                     <div class="sib-sms-input-wrapper" style="direction:ltr">
                       <div class="sib-sms-input" data-placeholder="" data-required="1" data-country-code="FR" data-whatsapp-country-code="FR" data-value="" data-whatsappvalue="" data-attributename="SMS">
                         <div class="entry__field">
-                          <select class="input" name="SMS__COUNTRY_CODE" data-required="true">
+                          <select class="input" name="SMS__COUNTRY_CODE" data-required="true" aria-label="Code pays">
                             <option value="+33" selected>+33 FR</option>
                             <option value="+1">+1 US</option>
                             <option value="+44">+44 GB</option>
@@ -1106,7 +1216,7 @@
                           </select>
                         </div>
                         <div class="entry__field" style="width: 100%">
-                          <input type="tel" class="input" id="SMS" name="SMS" autocomplete="off" placeholder="Téléphone" data-required="true" required />
+                          <input type="tel" class="input" id="SMS" name="SMS" autocomplete="tel" placeholder="Téléphone" data-required="true" required />
                         </div>
                       </div>
                     </div>
@@ -1121,7 +1231,7 @@
                   <div class="form__label-row ">
                     <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#d4af37;" for="EMAIL" data-required="*">Veuillez renseigner votre adresse email</label>
                     <div class="entry__field">
-                      <input class="input " type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
+                      <input class="input " type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="EMAIL" data-required="true" required />
                     </div>
                   </div>
                   <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
